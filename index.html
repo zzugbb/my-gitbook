@@ -160,8 +160,10 @@
                                 
                                 <h1 id="my-gitbook">my-gitbook</h1>
 <p>my-first-gitbook</p>
-<h2 id="&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;">&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;</h2>
-<pre><code class="lang-js"><span class="hljs-comment">//&#x521B;&#x5EFA;&#x5982;&#x4E0B;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span>
+<h2 id="gitbook&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;">gitbook&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;</h2>
+<pre><code class="lang-js">npm install gitbook -g <span class="hljs-comment">//&#x5B89;&#x88C5;gitbook</span>
+
+<span class="hljs-comment">//&#x521B;&#x5EFA;&#x5982;&#x4E0B;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span>
 my-gitbook/
 &#x251C;&#x2500;&#x2500; README.md  <span class="hljs-comment">//&#x4E66;&#x7C4D;&#x4ECB;&#x7ECD;</span>
 &#x2514;&#x2500;&#x2500; SUMMARY.md <span class="hljs-comment">//&#x4E66;&#x7C4D;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span>
@@ -169,12 +171,22 @@ my-gitbook/
 gitbook init <span class="hljs-comment">//&#x521B;&#x5EFA; SUMMARY.md &#x4E2D;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span>
 gitbook serve <span class="hljs-comment">//&#x7F16;&#x8BD1; &amp;&amp; &#x9884;&#x89C8;</span>
 
-gitbook build <span class="hljs-comment">// &#x7F16;&#x8BD1;</span>
+gitbook build <span class="hljs-comment">// &#x7F16;&#x8BD1;-&#x751F;&#x6210; _book/</span>
+</code></pre>
+<h2 id="&#x672C;&#x9879;&#x76EE;&#x4F7F;&#x7528;">&#x672C;&#x9879;&#x76EE;&#x4F7F;&#x7528;</h2>
+<pre><code class="lang-js"><span class="hljs-number">1.</span> git clone https:<span class="hljs-comment">//github.com/zzugbb/my-gitbook.git</span>
+<span class="hljs-number">2.</span> &#x4FEE;&#x6539;&#x4E66;&#x7C4D;&#x6587;&#x4EF6;&#xFF0C;md&#x6587;&#x4EF6;.(master&#x5206;&#x652F;)
+<span class="hljs-number">3.</span> &#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x5230;&#x8FDC;&#x7A0B;.(master&#x5206;&#x652F;)
+<span class="hljs-number">4.</span> &#x89E6;&#x53D1;&#x81EA;&#x52A8;&#x6784;&#x5EFA;.
 </code></pre>
 <h2 id="&#x90E8;&#x7F72;&#x8BF4;&#x660E;">&#x90E8;&#x7F72;&#x8BF4;&#x660E;</h2>
 <ul>
 <li>master: &#x4FDD;&#x5B58;&#x4E66;&#x7C4D;&#x7684;&#x6E90;&#x7801;</li>
-<li>gh-pages: &#x53D1;&#x5E03;&#x540E;&#x7684;&#x9759;&#x6001;&#x9875;&#x9762;&#xFF0C;&#x4FBF;&#x4E8E;&#x9875;&#x9762;&#x8BBF;&#x95EE;</li>
+<li>gh-pages: &#x53D1;&#x5E03;&#x540E;&#x7684;&#x9759;&#x6001;&#x9875;&#x9762;&#xFF0C;&#x5373; _book/ &#x4E0B;&#x9762;&#x5185;&#x5BB9;&#xFF0C;&#x4FBF;&#x4E8E;&#x9875;&#x9762;&#x8BBF;&#x95EE;</li>
+</ul>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="http://www.chengweiyang.cn/gitbook/introduction/README.html" target="_blank">gitbook&#x6559;&#x7A0B;</a></li>
 </ul>
 
                                 
@@ -215,7 +227,7 @@ gitbook build <span class="hljs-comment">// &#x7F16;&#x8BD1;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"项目介绍","level":"1.1","depth":1,"next":{"title":"持续集成","level":"1.2","depth":1,"path":"CI.md","ref":"CI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-02-26T08:21:53.546Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T08:28:17.388Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"项目介绍","level":"1.1","depth":1,"next":{"title":"持续集成","level":"1.2","depth":1,"path":"CI.md","ref":"CI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-02-26T09:48:51.067Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T09:49:38.225Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -223,10 +235,6 @@ gitbook build <span class="hljs-comment">// &#x7F16;&#x8BD1;</span>
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
