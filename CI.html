@@ -171,6 +171,56 @@
 <h2 id="&#x914D;&#x7F6E;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x6587;&#x4EF6;</h2>
 <p><code>.travis.yml</code> &#x662F; <code>Travis CI</code> &#x7684;&#x90E8;&#x7F72;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;<code>Travis CI</code> &#x90E8;&#x7F72;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x8BFB;&#x53D6;&#x6211;&#x4EEC;&#x6BCF;&#x6B21; Commit &#x4E2D;&#x662F;&#x5426;&#x5305;&#x542B; .travis.yml&#xFF0C;&#x6709;&#x6B64;&#x6587;&#x4EF6;&#x624D;&#x4F1A;&#x5F00;&#x59CB;&#x90E8;&#x7F72;&#x3002;</p>
 <h3 id="&#x521B;&#x5EFA;-travisyml-&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x521B;&#x5EFA; <code>.travis.yml</code> &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-yaml"><span class="hljs-attr">language:</span> node_js <span class="hljs-comment"># &#x7F16;&#x8BD1;&#x8BED;&#x8A00;&#x3001;&#x73AF;&#x5883;</span>
+<span class="hljs-attr">node_js:</span> stable <span class="hljs-comment"># Node.js &#x7248;&#x672C;</span>
+
+<span class="hljs-attr">branches:</span>
+<span class="hljs-attr">  only:</span>
+<span class="hljs-bullet">    -</span> master <span class="hljs-comment"># &#x53EA;&#x6709;master&#x5206;&#x652F;&#x66F4;&#x6539;&#x624D;&#x89E6;&#x53D1;CI</span>
+
+<span class="hljs-attr">install:</span>
+<span class="hljs-bullet">  -</span> npm install gitbook-cli -g <span class="hljs-comment"># &#x5B89;&#x88C5; gitbook</span>
+<span class="hljs-bullet">  -</span> gitbook install <span class="hljs-comment"># &#x5B89;&#x88C5; gitbook &#x63D2;&#x4EF6;</span>
+
+<span class="hljs-attr">script:</span> <span class="hljs-comment"># &#x6267;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;</span>
+<span class="hljs-bullet">  -</span> gitbook build
+
+<span class="hljs-attr">deploy:</span>
+<span class="hljs-attr">  provider:</span> pages
+<span class="hljs-attr">  skip_cleanup:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># &#x8DF3;&#x8FC7;&#x6E05;&#x7406;</span>
+<span class="hljs-attr">  local_dir:</span> _book <span class="hljs-comment"># &#x9700;&#x8981;&#x63A8;&#x9001;&#x5230;Github&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x76EE;&#x5F55;</span>
+<span class="hljs-attr">  name:</span> $GIT_NAME <span class="hljs-comment"># &#x7528;&#x6237;&#x540D;&#x53D8;&#x91CF;</span>
+<span class="hljs-attr">  email:</span> $GIT_EMAIL <span class="hljs-comment"># &#x7528;&#x6237;&#x90AE;&#x7BB1;&#x53D8;&#x91CF;</span>
+<span class="hljs-attr">  github_token:</span> $GITHUB_TOKEN <span class="hljs-comment"># GitHub Token&#x53D8;&#x91CF;</span>
+<span class="hljs-attr">  keep-history:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># &#x4FDD;&#x6301;&#x63A8;&#x9001;&#x8BB0;&#x5F55;&#xFF0C;&#x4EE5;&#x589E;&#x91CF;&#x63D0;&#x4EA4;&#x7684;&#x65B9;&#x5F0F;</span>
+<span class="hljs-attr">  target-branch:</span> gh-pages <span class="hljs-comment"># &#x63A8;&#x9001;&#x7684;&#x76EE;&#x6807;&#x5206;&#x652F; local_dir-&gt;&gt;gh-pages&#x5206;&#x652F;, &#x4E0D;&#x5305;&#x542B;_book&#x76EE;&#x5F55;</span>
+<span class="hljs-attr">  on:</span>
+<span class="hljs-attr">    branch:</span> master <span class="hljs-comment"># &#x5DE5;&#x4F5C;&#x5206;&#x652F;</span>
+</code></pre>
+<h3 id="&#x5728;-travis-ci-&#x4E2D;&#x914D;&#x7F6E;&#x53D8;&#x91CF;">&#x5728; Travis CI &#x4E2D;&#x914D;&#x7F6E;&#x53D8;&#x91CF;</h3>
+<ul>
+<li>$GIT_NAME&#xFF1A;git &#x7528;&#x6237;&#x540D;</li>
+<li>$GIT_EMAIL&#xFF1A;git &#x7528;&#x6237;&#x90AE;&#x7BB1;</li>
+<li>$GITHUB_TOKEN&#xFF1A;GitHub &#x901A;&#x884C;&#x8BC1; (token) &#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<p>GitHub &#x901A;&#x884C;&#x8BC1; (token) &#x6211;&#x4EEC;&#x5728; GitHub &#x4E2D;&#x8FDB;&#x884C;&#x7533;&#x8BF7;</p>
+<ul>
+<li>&#x8BBF;&#x95EE; <a href="https://github.com/settings/tokens" target="_blank">GitHub &#x8D26;&#x6237;&#x8BBE;&#x7F6E;</a> &gt; Tokens</li>
+<li>&#x751F;&#x6210;&#x65B0; Token: Generate new token</li>
+<li>&#x586B;&#x5165; Token &#x63CF;&#x8FF0;&#xFF0C;&#x5E76;&#x7ED9;&#x4E88; Token &#x7B2C;&#x4E00;&#x9879; repo &#x7684;&#x5168;&#x90E8;&#x6743;&#x9650;</li>
+</ul>
+<p><img src="img/shili2.jpg"></p>
+<p>&#x5728; <code>Travis CI</code> &#x4ED3;&#x5E93;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x5C06;&#x4E09;&#x4E2A;&#x53D8;&#x91CF;&#x586B;&#x5165;&#x8BBE;&#x7F6E;&#xFF08;&#x4F4D;&#x4E8E; <code>Settings &gt; Environment Variables</code> &#x5904;&#xFF09;&#x5E76;&#x4FDD;&#x5B58;:</p>
+<p><img src="img/shili4.jpg"></p>
+<p><img src="img/shili3.jpg"></p>
+<h2 id="&#x81EA;&#x52A8;&#x90E8;&#x7F72;">&#x81EA;&#x52A8;&#x90E8;&#x7F72;</h2>
+<pre><code class="lang-js">git add .
+git commit -m &quot;Publish new book.&quot;
+# &#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
+git push
+</code></pre>
+<p>&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x4E66;&#x7C4D;&#x540E;&#xFF0C;&#x53D1;&#x5E03;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#xFF0C;&#x4E14;&#x53D1;&#x9001;&#x5230; <code>gh-pages</code> &#x5206;&#x652F;&#x3002;</p>
+<p>&#x65E2;&#x4FDD;&#x7559;&#x6E90;&#x7801;&#xFF0C;&#x53C8;&#x81EA;&#x52A8;&#x6784;&#x5EFA;&#x3002;</p>
 
                                 
                                 </section>
@@ -210,7 +260,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"持续集成","level":"1.2","depth":1,"previous":{"title":"项目介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CI.md","mtime":"2019-02-26T09:48:51.067Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T09:49:38.225Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"持续集成","level":"1.2","depth":1,"previous":{"title":"项目介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CI.md","mtime":"2019-02-26T10:06:43.901Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T10:07:30.007Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
