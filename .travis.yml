@@ -11,7 +11,10 @@ branches:
     - master # 只有master分支更改才触发CI
 
 before_install: 
+  - export TZ='Asia/Shanghai' # 更改时区
   - npm install gitbook-cli -g # 安装 gitbook
+  # 安装 gitbook 插件
+  - gitbook install
 
 #install:
 #  - npm install # 安装依赖
