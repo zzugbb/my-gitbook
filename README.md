@@ -31,3 +31,7 @@ gitbook build // 编译-生成 _book/
 
 * master: 保存书籍的源码
 * gh-pages: 发布后的静态页面，即 _book/ 下面内容，便于页面访问
+
+## 参考
+
+* [gitbook教程](http://www.chengweiyang.cn/gitbook/introduction/README.html)
