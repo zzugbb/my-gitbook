@@ -2,6 +2,8 @@
 
 my-first-gitbook
 
+<img src="https://travis-ci.org/zzugbb/my-gitbook.svg?branch=master" alt="build:started">
+
 ## gitbook项目初始化
 
 ```js
