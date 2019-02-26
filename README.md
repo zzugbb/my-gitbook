@@ -2,7 +2,9 @@
 
 my-first-gitbook
 
-<img src="https://travis-ci.org/zzugbb/my-gitbook.svg?branch=master" alt="build:started">
+<a href="https://travis-ci.org/zzugbb/my-gitbook" rel="nofollow">
+  <img src="https://travis-ci.org/zzugbb/my-gitbook.svg?branch=master" alt="Build Status">
+</a>
 
 ## gitbook项目初始化
 
