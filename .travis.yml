@@ -11,10 +11,10 @@ branches:
     - master # 只有master分支更改才触发CI
 
 before_install: 
-  - npm install gitbook-cli # 安装 gitbook
+  - npm install gitbook-cli -g # 安装 gitbook
 
-install:
-  - npm install # 安装依赖
+#install:
+#  - npm install # 安装依赖
 
 script: # 执行脚本，生成静态文件
   - gitbook build
