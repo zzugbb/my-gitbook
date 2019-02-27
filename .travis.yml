@@ -9,10 +9,6 @@ install:
   - npm install gitbook-cli -g # 安装 gitbook
   - gitbook install # 安装 gitbook 插件
 
-cache:
-  directories:
-    - node_modules  
-
 script: # 执行脚本，生成静态文件
   - gitbook build
 
