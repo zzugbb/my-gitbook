@@ -1,6 +1,8 @@
 language: node_js # 编译语言、环境
 node_js: stable #Node.js 版本
 
+cache: npm
+
 branches:
   only:
     - master # 只有master分支更改才触发CI
